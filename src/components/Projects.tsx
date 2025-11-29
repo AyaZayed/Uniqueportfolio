@@ -14,7 +14,7 @@ const projects = [
     theme: 'sun',
     bgColor: 'bg-orange-100',
     accentColor: 'bg-orange-400',
-    image: leRubImg,
+    image: "https://res.cloudinary.com/dijc5luus/image/upload/v1764374985/le_rub_qofndx.png",
   },
   {
     title: 'Mood',
@@ -24,7 +24,7 @@ const projects = [
     theme: 'moon',
     bgColor: 'bg-indigo-100',
     accentColor: 'bg-indigo-400',
-    image: moodImg,
+    image: "https://res.cloudinary.com/dijc5luus/image/upload/v1764374965/mood_journal_o93nuw.png",
   },
   {
     title: 'Crowdfundr',
@@ -34,7 +34,7 @@ const projects = [
     theme: 'heart',
     bgColor: 'bg-rose-100',
     accentColor: 'bg-rose-400',
-    image: crowdfundrImg,
+    image: "https://res.cloudinary.com/dijc5luus/image/upload/v1764374945/Screenshot_2025-10-17_171426_op8cbg.png",
   },
 ];
 

@@ -1,6 +1,6 @@
-import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
-import profileImg from 'figma:asset/729be97d84f22d73bd90a5945012d7d9296523f9.png';
+import { motion } from "motion/react";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import profileImg from "figma:asset/729be97d84f22d73bd90a5945012d7d9296523f9.png";
 
 export function Hero() {
   return (
@@ -17,7 +17,9 @@ export function Hero() {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-slate-900">
                 <img
-                  src={profileImg}
+                  src={
+                    "https://res.cloudinary.com/dijc5luus/image/upload/v1764374927/aya_qqv3m2.jpg"
+                  }
                   alt="Aya Zayed"
                   className="w-full h-full object-cover"
                 />
@@ -35,18 +37,18 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="text-slate-600 mb-2">Hello, I'm</p>
-            
-            <h1 className="mb-4 text-slate-900">
-              Aya Zayed
-            </h1>
+
+            <h1 className="mb-4 text-slate-900">Aya Zayed</h1>
 
             <h2 className="text-slate-700 mb-6">
               MERN Stack Developer & Creative Builder
             </h2>
 
             <p className="text-slate-600 mb-8 leading-relaxed">
-              Crafting beautiful, functional web experiences with modern technologies.
-              From teaching programming to building AI-powered applications, I bring ideas to life.
+              Crafting beautiful, functional web experiences
+              with modern technologies. From teaching
+              programming to building AI-powered applications, I
+              bring ideas to life.
             </p>
 
             <div className="flex items-center gap-3 text-slate-600 mb-6">
