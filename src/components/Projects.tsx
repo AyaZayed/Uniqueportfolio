@@ -12,6 +12,7 @@ const projects = [
     fullDescription: 'A modern e-commerce platform for sunscreen products with a beautiful, responsive design.',
     tech: ['Next.js', 'Tailwind CSS', 'Prisma', 'Neon Database'],
     theme: 'sun',
+    link:"https://lerub.vercel.app/",
     bgColor: 'bg-orange-100',
     accentColor: 'bg-orange-400',
     image: "https://res.cloudinary.com/dijc5luus/image/upload/v1764374985/le_rub_qofndx.png",
@@ -22,6 +23,7 @@ const projects = [
     fullDescription: 'Track your inner universe. AI-powered journaling that analyzes your emotions and tracks mood patterns over time.',
     tech: ['Next.js', 'Google Generative AI', 'Prisma', 'TypeScript'],
     theme: 'moon',
+    link:"https://mood-journal-nine.vercel.app/",
     bgColor: 'bg-indigo-100',
     accentColor: 'bg-indigo-400',
     image: "https://res.cloudinary.com/dijc5luus/image/upload/v1764374965/mood_journal_o93nuw.png",
@@ -32,6 +34,7 @@ const projects = [
     fullDescription: 'A crowdfunding platform similar to GoFundMe, enabling people to support campaigns that matter.',
     tech: ['Vanilla JavaScript', 'REST API', 'Responsive Design'],
     theme: 'heart',
+    link:"https://github.com/AyaZayed/crowdfundr-vanilla-js",
     bgColor: 'bg-rose-100',
     accentColor: 'bg-rose-400',
     image: "https://res.cloudinary.com/dijc5luus/image/upload/v1764374945/Screenshot_2025-10-17_171426_op8cbg.png",
@@ -155,7 +158,7 @@ export function Projects() {
               transition={{ duration: 0.5 }}
               className="bg-white border-4 border-slate-900"
             >
-              <a href="/" className="grid md:grid-cols-2 gap-0">
+              <a href={currentProject.link} className="grid md:grid-cols-2 gap-0">
                 {/* Image side */}
                 <div className="h-full min-h-[400px] border-r-4 border-slate-900">
                   <img
