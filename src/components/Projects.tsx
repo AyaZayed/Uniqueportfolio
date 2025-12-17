@@ -155,7 +155,7 @@ export function Projects() {
               transition={{ duration: 0.5 }}
               className="bg-white border-4 border-slate-900"
             >
-              <div className="grid md:grid-cols-2 gap-0">
+              <a href="/" className="grid md:grid-cols-2 gap-0">
                 {/* Image side */}
                 <div className="h-full min-h-[400px] border-r-4 border-slate-900">
                   <img
@@ -204,7 +204,7 @@ export function Projects() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </motion.div>
           </div>
 
