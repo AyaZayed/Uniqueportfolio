@@ -158,7 +158,7 @@ export function Projects() {
               transition={{ duration: 0.5 }}
               className="bg-white border-4 border-slate-900"
             >
-              <a href={currentProject.link} className="grid md:grid-cols-2 gap-0">
+              <a href={currentProject.link} target="_blank" className="grid md:grid-cols-2 gap-0">
                 {/* Image side */}
                 <div className="h-full min-h-[400px] border-r-4 border-slate-900">
                   <img
