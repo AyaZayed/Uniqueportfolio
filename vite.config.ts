@@ -5,6 +5,7 @@
 
   export default defineConfig({
     plugins: [react()],
+      base: '/Uniqueportfolio/',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
