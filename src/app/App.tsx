@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import cloudsVideo from "../imports/clouds1.webm";
+import cloudsVideoMp4 from "../imports/clouds1.mp4";
 import cloudsPoster from "../imports/hero.jpg";
 import leRubImage from "figma:asset/39709ba5f4616fba1a206b3e025abafdd167c9c5.png";
 import moodImage from "figma:asset/c7476971d1e0dc9ef00a6bf60db257ac9fc55659.png";
@@ -327,6 +328,31 @@ function Projects() {
 export default function App() {
   const [showLoader, setShowLoader] = useState(true);
   const [loaderLeaving, setLoaderLeaving] = useState(false);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  // React doesn't reliably set the `muted` attribute, which blocks autoplay.
+  // Set it on the element and retry play() when the browser allows it.
+  useEffect(() => {
+    const v = heroVideoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    v.playsInline = true;
+    const tryPlay = () => {
+      if (v.paused) v.play().catch(() => {});
+    };
+    tryPlay();
+    v.addEventListener("canplay", tryPlay);
+    document.addEventListener("visibilitychange", tryPlay);
+    window.addEventListener("pointerdown", tryPlay, { once: true });
+    window.addEventListener("touchstart", tryPlay, { once: true });
+    return () => {
+      v.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("visibilitychange", tryPlay);
+      window.removeEventListener("pointerdown", tryPlay);
+      window.removeEventListener("touchstart", tryPlay);
+    };
+  }, []);
 
   useEffect(() => {
     const leaveTimer = window.setTimeout(() => setLoaderLeaving(true), 1200);
@@ -390,6 +416,7 @@ export default function App() {
 
       <header id="top" className="relative flex min-h-svh flex-col justify-between overflow-hidden bg-background p-4 sm:p-8">
         <motion.video
+          ref={heroVideoRef}
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
@@ -402,6 +429,7 @@ export default function App() {
           animate={loaderLeaving ? { scale: 1, opacity: 1 } : { scale: 1.08, opacity: 0 }}
           transition={{ scale: { duration: 2.4, ease: [0.2, 0.7, 0.2, 1] }, opacity: { duration: 0.8 } }}
         >
+          <source src={cloudsVideoMp4} type="video/mp4" />
           <source src={cloudsVideo} type="video/webm" />
         </motion.video>
         <div className="absolute inset-0 bg-[#faf7f1]/84" />
